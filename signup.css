@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+#body {
+    background-image: url(assets/bg-dark.png);
+    color: white;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    display: flex;
+    flex-direction: row;
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+#part_1 {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 65px;
+    height: auto;
+}
+
+#nav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 15px;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#img {
+    width: 75px;
+    padding-right: 15px;
+}
+
+#title {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Pacifico', cursive;
+}
+
+.icon_line {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+}
+
+.icon_line span {
+    color: rgb(23, 123, 255);
+}
+
+#ul_links {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+}
+
+.li_links {
+    list-style: none;
+    margin: 4px 30px 0px 2px;
+    font-size: 20px;
+    font-family: 'Concert One', sans-serif;
+}
+
+.li-links:hover {
+    color: rgb(128, 128, 128);
+}
+
+#part_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup_form {
+    width: 40%;
+    background-color: rgba(45, 87, 136, 0.719);
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    border-radius: 25px;
+}
+
+#header {
+    text-align: center;
+    margin: 30px;
+    margin-bottom: 80px;
+}
+
+#header span {
+    color: rgb(23, 123, 255)
+}
+
+input {
+    width: 100%;
+    height: 35px;
+    padding-left: 7px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 7px;
+    border: none;
+    opacity: 85%;
+    border-style: none;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.password_field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: white;
+    border-radius: 7px;
+    width: 100%;
+    padding-right: 7px;
+
+}
+
+.password_field button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    color: rgb(23, 123, 255);
+    padding: 0px 5px;
+}
+
+.password_field button:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    color: rgb(17, 88, 182);
+    padding: 0px 5px;
+}
+
+.password_field button:active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(121, 121, 121, 0.295);
+    border-radius: 50%;
+    border: none;
+    color: rgb(17, 88, 182);
+    padding: 0px 5px;
+}
+
+#show_pwd {
+    margin-left: 15px;
+}
+
+#pwd_input,
+#cpwd_input {
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+p {
+    margin-top: 20px;
+    font-family: 'Mukta', sans-serif;
+    padding-left: 2px;
+    font-size: 18px;
+}
+
+#gen {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+#div_male,
+#div_female,
+#div_none {
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    padding: 0px;
+}
+
+#div_male {
+    padding-left: 20px;
+}
+
+#div_male input,
+#div_female input,
+#div_none input {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    width: 15px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#div_male p,
+#div_female p,
+#div_none p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3px;
+    padding-left: 5px;
+    margin: 0px;
+}
+
+#fn_error,
+#ln_error,
+#un_error,
+#pwd_error,
+#cpwd_error {
+    font-size: 15px;
+    color: red;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}
+
+
+#dob_input{
+    padding-right: 7px;
+}
+#btn {
+    margin: 40px 10px 0px 10px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup_btn {
+    width: 90%;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 900;
+    border: none;
+    background-color: rgb(23, 123, 255);
+    border-radius: 15px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+#login_account {
+    text-align: center;
+}
+
+#login_account a {
+    color: rgb(23, 123, 255);
+    text-decoration: none;
+}
+
+#login_account a:visited {
+    color: rgb(23, 123, 255);
+}
+
+#part_3 {
+    text-align: center;
+    background-color: rgb(23, 123, 255);
+    height: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}

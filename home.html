@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="assets/main_logo.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Signika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="stylesheet" href="home.css">
+    <title>MediaHub</title>
+</head>
+
+<body id="body" onload="setup(), load_profile_img(), render()">
+    <div id="full_screen">
+        <div>
+            <span class="material-symbols-rounded" onclick="exit()">
+                close
+            </span>
+        </div>
+        <img class="img_selection" src="#" alt="image">
+    </div>
+    <div id="part_1">
+        <div id="nav">
+            <div id="logo">
+                <img id="img" src="assets/main_logo.png" alt="logo img">
+            </div>
+            <div>
+                <div>
+                    <div id="home_icon" class="icon_line">
+                        <a onclick="screen('home')" href="#body" class="material-symbols-rounded">
+                            home
+                        </a>
+                    </div>
+                    <div id="user_icon" class="icon_line">
+                        <a onclick="screen('user')" href="#body" class="material-symbols-outlined">
+                            person
+                        </a>
+                    </div>
+                    <div class="icon_line">
+                        <a onclick="screen('upload')" href="#body" class="material-symbols-outlined">
+                            add_a_photo
+                        </a>
+                    </div>
+                    <div class="icon_line">
+                        <a onclick="screen('setting')" href="#body" class="material-symbols-outlined">
+                            settings
+                        </a>
+                    </div>
+                    <div class="icon_line">
+                        <a class="material-symbols-outlined" onclick="mode()" id="mode">
+                            light_mode
+                        </a>
+                    </div>
+                </div>
+                <div class="icon_line_logout">
+                    <a href="login.html" onclick="logout()" class="material-symbols-outlined">
+                        logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home">
+        <!-- <div id="part_2_home">
+            <div id="story_list">
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+                <button class="story">
+                    <img src="assets/user.jpg" alt="image">
+                </button>
+            </div>
+        </div> -->
+        <p id="no_content">No Content To Show</p>
+        <ul id="main_home">
+            <!-- <li class="li_content">
+                <div class="content">
+                    <span id="like_1_" class="material-symbols-rounded">favorite</span>
+                    <div class="content_img_class">
+                        <span class="material-symbols-rounded" onclick="full_screen('assets/test.jpg')">
+                            fullscreen
+                        </span>
+                        <img class="content_img" src="assets/test.jpg" ondblclick="dblclick('like_1')" alt="image">
+                    </div>
+                    <div class="details">
+                        <p class="profile_info">
+                            <img src="assets/user.jpg" alt="image">
+                            <span>_.f4ysal.mohd03</span>
+                            <span class="material-icons visible">
+                                verified
+                            </span>
+                        </p>
+                        <p class="caption">what a great date in paris it is.
+                            what a great date in paris it is.
+                        </p>
+                        <div class="reactions_details">
+                            <p class="post_date">15/10/2023</p>
+                            <p> • </p>
+                            <p>23 Likes</p>
+                            <p> • </p>
+                            <p>3 Comments</p>
+                        </div>
+
+                    </div>
+                    <div class="reactions">
+                        <button id="like_1" class="material-symbols-rounded" onclick="like('like_1')">
+                            favorite
+                        </button>
+                        <button class="material-symbols-rounded" onclick="add_comment('input_1')">
+                            add_comment
+                        </button>
+                    </div>
+                </div>
+
+                <div id="input_1">
+                    <div class="comment">
+                        <input type="text" placeholder="Add Comment...">
+                        <button onclick="post_comment('input_1')">
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </li>
+             <li class="li_content">
+                <div class="content">
+                    <span id="like_2_" class="material-symbols-rounded">favorite</span>
+                    <div class="content_img_class">
+                        <span class="material-symbols-rounded" onclick="full_screen('assets/test3.jpeg')">
+                            fullscreen
+                        </span>
+                        <img class="content_img" src="assets/test3.jpeg" ondblclick="dblclick('like_2')" alt="image">
+                    </div>
+                    <div class="details">
+                        <p class="profile_info">
+                            <img src="assets/user1.jpeg" alt="image">
+                            nehaalnaseem
+                            <span class="material-icons visible">
+                                verified
+                            </span>
+                        </p>
+                        <p class="caption">what a great date in paris it is.
+                            what a great date in paris it is. what a great date in paris it is.
+                            what a great date in paris it is.
+                        </p>
+                        <div class="reactions_details">
+                            <p class="post_date">15/10/2023</p>
+                            <p> • </p>
+                            <p>23 Likes</p>
+                            <p> • </p>
+                            <p>3 Comments</p>
+                        </div>
+
+                    </div>
+                    <div class="reactions">
+                        <button id="like_2" class="material-symbols-rounded" onclick="like('like_2')">
+                            favorite
+                        </button>
+                        <button class="material-symbols-rounded" onclick="add_comment('input_2')">
+                            add_comment
+                        </button>
+                    </div>
+                </div>
+                <div id="input_2">
+                    <div class="comment">
+                        <input type="text" placeholder="Add Comment...">
+                        <button onclick="post_comment('input_2')">
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li class="li_content">
+                <div class="content">
+                    <span id="like_3_" class="material-symbols-rounded">favorite</span>
+                    <div class="content_img_class">
+                        <span class="material-symbols-rounded" onclick="full_screen('assets/test.jpg')">
+                            fullscreen
+                        </span>
+                        <img class="content_img" src="assets/test.jpg" ondblclick="dblclick('like_3')" alt="image">
+                    </div>
+                    <div class="details">
+                        <p class="profile_info">
+                            <img src="assets/user.jpg" alt="image">
+                            moneymoney
+                            <span class="material-icons visible">
+                                verified
+                            </span>
+                        </p>
+                        <p class="caption">what a great date in paris it is.
+                            what a great date in paris it is.
+                        </p>
+                        <div class="reactions_details">
+                            <p class="post_date">15/10/2023</p>
+                            <p> • </p>
+                            <p>23 Likes</p>
+                            <p> • </p>
+                            <p>3 Comments</p>
+                        </div>
+
+                    </div>
+                    <div class="reactions">
+                        <button id="like_3" class="material-symbols-rounded" onclick="like('like_3')">
+                            favorite
+                        </button>
+                        <button class="material-symbols-rounded" onclick="add_comment('input_3')">
+                            add_comment
+                        </button>
+                    </div>
+                </div>
+                <div id="input_3">
+                    <div class="comment">
+                        <input type="text" placeholder="Add Comment...">
+                        <button onclick="post_comment('input_3')">
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+
+    <div id="user">
+        <div id="part_2_user">
+            <div id="main_user">
+                <div id="profile">
+                    <div id="profile_img_div">
+                        <img id="profile_img" src="#" alt="image">
+                    </div>
+                    <div id="details">
+                        <div>
+                            <p id="user_name"></p>
+                            <span id="profile_verified" class="material-symbols-rounded">verified</span>
+                        </div>
+
+                        <p id="user_username"></p>
+                        <p id="user_bio"></p>
+                    </div>
+                </div>
+                <div id="stats">
+                    <div>
+                        <span class="material-symbols-rounded" style="color: rgb(0, 255, 0);">
+                            image
+                        </span>
+                        <p id="post_stat">
+
+                        </p>
+                    </div>
+
+                    <div>
+                        <span class="material-symbols-rounded" style="color: red">
+                            favorite
+                        </span>
+                        <p id="like_stat">
+
+                        </p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-rounded" style="color: rgb(0, 162, 255)">
+                            chat
+                        </span>
+                        <p id="comment_stat">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p id="empty_post">Upload images to see them here in your collection.</p>
+
+            <div id="posts">
+            </div>
+        </div>
+    </div>
+
+    <div id="upload">
+        <div id="part_2_upload">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div>
+                    <p id="choose_post_img">Click to choose an Image.</p>
+                    <input id="upload_input_value" type="file" name="file">
+                </div>
+                <div>
+                    <p>Caption</p>
+                    <input id="upload_input_value_caption" type="text" name="text" placeholder="Caption">
+                </div>
+                <div>
+                    <input id="upload_input_value_button" type="submit" name="submit" value="Upload">
+                </div>
+            </form>
+            <!-- <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <script src="home.js"></script>
+            </form> -->
+        </div>
+    </div>
+
+    <div id="setting">
+        <div id="part_2_setting">
+            <p class="setting_name">Profile Settings</p>
+            <div id="change_profile">
+
+                <form action="/new-profile" method="post" enctype="multipart/form-data">
+                    <div>
+                        <p id="choose_profile_img">Click to choose a New Profile Picture.</p>
+                        <input id="setting_input_value" type="file" name="profile">
+                    </div>
+                    <div>
+                        <input id="setting_input_value_button" type="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+
+            <p class="setting_name">Name Settings</p>
+            <input id="update_fn" class="setting_input" type="text" placeholder="Enter new First Name">
+            <button id="update_fn_btn" class="setting_input_button">Save</button>
+            <input id="update_ln" class="setting_input" type="text" placeholder="Enter new Last Name">
+            <button id="update_ln_btn" class="setting_input_button">Save</button>
+
+            <p class="setting_name">Username Settings</p>
+            <input id="update_un" class="setting_input" type="text" placeholder="Enter new Username">
+            <button id="update_un_btn" class="setting_input_button">Save</button>
+
+            <p class="setting_name">Bio Settings</p>
+            <input id="update_bio" class="setting_input" type="text" placeholder="Enter new Bio text">
+            <button id="update_bio_btn" class="setting_input_button">Save</button>
+
+
+            <p class="setting_name">Password Settings</p>
+            <input id="old_pwd" class="setting_input" type="text" placeholder="Enter Current Password"><br>
+            <input id="update_pwd" class="setting_input" type="text" placeholder="Enter New Password"><br>
+            <input id="update_pwd_cpwd" class="setting_input" type="text" placeholder="Enter New Password Again">
+            <p id="password_error">* Please Re-check the Passwords before entering.</p>
+            <button id="update_pwd_btn" class="setting_input_button">Save</button>
+
+            <p class="setting_name">Theme Settings</p>
+
+            <!-- <div class="setting_component">
+                <p>Background-Color</p>
+                <div>
+                    <input type="color" id="background" name="favcolor" value="#ff0000">
+                </div>
+            </div> -->
+
+            <div class="setting_component">
+                <p>Font-Color</p>
+                <div>
+                    <input type="color" id="font" name="favcolor" value="#ff0000">
+                </div>
+            </div>
+
+            <div class="setting_component">
+                <p>Button-Color</p>
+                <div>
+                    <input type="color" id="button" name="favcolor" value="#ff0000">
+                </div>
+            </div>
+
+            <p class="setting_name">Account Settings</p>
+            <div class="setting_component">
+                <p>Delete Account</p>
+                <button id="account_delete_btn" onclick="delete_account()" class="setting_input_button">Delete</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="success_id">
+
+    </div>
+
+    <a id="back" href="#body" class="material-symbols-rounded">
+        arrow_upward
+    </a>
+    <script src="home.js"></script>
+</body>
+
+</html>
